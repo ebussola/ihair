@@ -1,0 +1,16 @@
+{
+    "name": "ebussola/ihair",
+    "authors": [
+        {
+            "name": "Leonardo Shinagawa",
+            "email": "leonardo@ebussola.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "~5.5",
+        "slim/slim": "~2.4",
+
+        "joshtronic/php-googleplaces": "dev-master"
+    }
+}
