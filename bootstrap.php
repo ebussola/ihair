@@ -9,7 +9,10 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-$app = new \Slim\Slim();
+$app = new \Slim\Slim([
+    'view' => new \Slim\Views\Twig(),
+    'templates.path' => __DIR__ . '/views/'
+]);
 $app->container->config = include __DIR__ . '/config/parameters.php';
 $app->config('debug', $app->container->config['env'] == 'development');
 

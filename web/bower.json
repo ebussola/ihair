@@ -1,0 +1,13 @@
+{
+    "name": "ihair",
+    "private": true,
+    "dependencies": {
+        "modernizr": "~2.6.2",
+        "jquery": "~1.11.0",
+        "angular": "~1.2.16"
+    },
+    "devDependencies": {
+        "jasmine": "~2.0.0",
+        "angular-mocks": "~1.2.16"
+    }
+}

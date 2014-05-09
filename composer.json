@@ -10,6 +10,8 @@
     "require": {
         "php": "~5.5",
         "slim/slim": "~2.4",
+        "slim/views": "~0.1",
+        "twig/twig": "~1.15",
 
         "joshtronic/php-googleplaces": "dev-master"
     }
