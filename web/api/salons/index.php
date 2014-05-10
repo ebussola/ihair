@@ -10,7 +10,7 @@ use ebussola\ihair\SalonSearch;
 
 require __DIR__ . '/../../../bootstrap.php';
 
-var_dump(ENV);
+var_dump(getenv('ENV'));
 
 $app->get(
     '/',
