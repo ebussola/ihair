@@ -10,13 +10,10 @@ use ebussola\ihair\SalonSearch;
 
 require __DIR__ . '/../../../bootstrap.php';
 
-var_dump(getenv('ENV'));
-
 $app->get(
     '/',
     function () use ($app) {
         $latlng = $app->request->get('latlng');
-        $radius = $app->request->get('radius', 200);
 
         /** @var SalonSearch $salon_search */
         $salon_search = $app->container->salon_search;
