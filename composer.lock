@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "4f5a5ca34b19a17048d343493d7f34d3",
+    "hash": "49dcfeaac827017f8e556e95aae99e58",
     "packages": [
         {
             "name": "joshtronic/php-googleplaces",
