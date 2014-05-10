@@ -27,7 +27,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lista <b class="caret"></b></a>
                     <ul class="dropdown-menu" ng-controller="salons-list">
-                        <li ng-repeat="salon in salons">{{ salon.name }}</li>
+                        <li ng-repeat="salon in salons"><a href="#">{{ ng.curly("salon.name") }}</a></li>
                     </ul>
                 </li>
             </ul>

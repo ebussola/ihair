@@ -1,10 +1,13 @@
 'use strict';
 
-app.controller('salons-list', [function () {
+app.controller('salons-list', ['$scope', 'SalonService', function ($scope, SalonService) {
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (location) {
-
+            SalonService.getSalonsByLocation(location.coords.latitude+','+location.coords.longitude)
+                .then(function (salons) {
+                    $scope.salons = salons;
+                });
         });
     }
     else {

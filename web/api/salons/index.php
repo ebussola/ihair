@@ -6,21 +6,24 @@
  * Time: 22:11
  */
 
+use ebussola\ihair\SalonSearch;
+
 require __DIR__ . '/../../../bootstrap.php';
 
-$app->get('/', function() use ($app) {
-    $latlng = $app->request->get('latlng');
-    $radius = $app->request->get('radius', 200);
+$app->get(
+    '/',
+    function () use ($app) {
+        $latlng = $app->request->get('latlng');
+        $radius = $app->request->get('radius', 200);
 
-    /** @var GooglePlaces $google_places */
-    $google_places = $app->container->google_places;
-    $geolocation = explode(',', $latlng);
+        /** @var SalonSearch $salon_search */
+        $salon_search = $app->container->salon_search;
+        $geolocation = explode(',', $latlng);
 
-    $google_places->location = $geolocation;
-    $google_places->radius = $radius;
-    $result = $google_places->nearbySearch();
+        $result_data = $salon_search->getSalonsByLocation($geolocation);
 
-    $app->response->setBody(json_encode($result['results']));
-});
+        $app->response->setBody(json_encode($result_data));
+    }
+);
 
 $app->run();

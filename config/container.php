@@ -6,11 +6,24 @@
  * Time: 22:26
  */
 
-$app->container->singleton('google_places', function() use ($app) {
-    $config = $app->container->config;
+use ebussola\ihair\SalonSearch;
 
-    $google_places = new GooglePlaces($config['google-api-key']);
-    $google_places->types = ['beauty_salon', 'hair_care'];
+$app->container->singleton(
+    'google_places',
+    function () use ($app) {
+        $config = $app->container->config;
 
-    return $google_places;
-});
+        $google_places = new GooglePlaces($config['google-api-key']);
+
+        return $google_places;
+    }
+);
+
+$app->container->singleton(
+    'salon_search',
+    function () use ($app) {
+        $salon_search = new SalonSearch($app->container->google_places);
+
+        return $salon_search;
+    }
+);
