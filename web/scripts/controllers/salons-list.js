@@ -6,7 +6,12 @@ app.controller('salons-list', ['$scope', 'SalonService', function ($scope, Salon
         navigator.geolocation.getCurrentPosition(function (location) {
             SalonService.getSalonsByLocation(location.coords.latitude+','+location.coords.longitude)
                 .then(function (salons) {
-                    $scope.salons = salons;
+
+                    if (salons.length > 0) {
+                        $scope.salons = salons;
+                    } else {
+                        $('#no_results').modal('show');
+                    }
                 });
         });
     }

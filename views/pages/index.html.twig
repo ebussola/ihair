@@ -27,12 +27,15 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lista <b class="caret"></b></a>
                     <ul class="dropdown-menu" ng-controller="salons-list">
+                        <li class="text-center" ng-hide="salons.length"><img src="/images/ajax-loader.gif"></li>
                         <li ng-repeat="salon in salons"><a href="#">{{ ng.curly("salon.name") }}</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
+
+        {{ component.modal_ok("no_results", "Não encontramos resultados =(", "Não foi possível encontrar um salão próximo a você =(") }}
     </div>
     <!-- /.container-fluid -->
 </nav>
