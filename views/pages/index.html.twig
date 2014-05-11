@@ -1,55 +1,53 @@
 {% extends "templates/default.html.twig" %}
 {% block content %}
-{{ parent() }}
+    {{ parent() }}
 
-<!--[if lt IE 10]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-    your browser</a> to improve your experience.</p>
-<![endif]-->
+    <!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">iHair</a>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">iHair</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lista <b class="caret"></b></a>
+                        <ul class="dropdown-menu" ng-controller="salons-list">
+                            <li class="text-center" ng-hide="salons.length"><img src="/images/ajax-loader.gif"></li>
+                            <li ng-repeat="salon in salons"><a href="#">{{ ng.curly("salon.name") }}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+
+            {{ component.modal_ok("no_results", "Não encontramos resultados =(", "Não foi possível encontrar um salão próximo a você =(") }}
         </div>
+        <!-- /.container-fluid -->
+    </nav>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lista <b class="caret"></b></a>
-                    <ul class="dropdown-menu" ng-controller="salons-list">
-                        <li class="text-center" ng-hide="salons.length"><img src="/images/ajax-loader.gif"></li>
-                        <li ng-repeat="salon in salons"><a href="#">{{ ng.curly("salon.name") }}</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
 
-        {{ component.modal_ok("no_results", "Não encontramos resultados =(", "Não foi possível encontrar um salão próximo a você =(") }}
+    <div class="container" ng-controller="map">
+
+        <google-map center="map.center" zoom="map.zoom">
+            <markers models="salons" coords="'location'"></markers>
+        </google-map>
+        {#<markers models='salons'></markers>#}
+        {#coords='{string}'#}
+
     </div>
-    <!-- /.container-fluid -->
-</nav>
-
-
-<div class="container">
-
-    <div class="jumbotron">
-        <h1>iHair</h1>
-    </div>
-
-    <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-    </div>
-
-</div>
 {% endblock %}
