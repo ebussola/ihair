@@ -43,11 +43,10 @@
 
     <div class="container" ng-controller="map">
 
-        <google-map center="map.center" zoom="map.zoom">
+        <div class="google-map" center="map.center" zoom="map.zoom" options="map.options">
             <markers models="salons" coords="'location'"></markers>
-        </google-map>
-        {#<markers models='salons'></markers>#}
-        {#coords='{string}'#}
+            <marker coords="map.user_marker" icon="'/images/map-marker-user-location.png'"></marker>
+        </div>
 
     </div>
 {% endblock %}

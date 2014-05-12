@@ -14,10 +14,20 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
 
     <!-- include source files here... -->
-    <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+    <script src='/bower_components/underscore/underscore.js'></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src='/bower_components/angular-google-maps/dist/angular-google-maps.js'></script>
+
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/SalonService.js"></script>
+    <script src="/scripts/controllers/salons-list.js"></script>
+    <script src="/scripts/controllers/map.js"></script>
+
+    <!-- angular mock is used only by test -->
     <script type="text/javascript" src="/bower_components/angular-mocks/angular-mocks.js"></script>
-    <script type="text/javascript" src="/scripts/main.js"></script>
-    <script type="text/javascript" src="/scripts/SalonService.js"></script>
 
     <!-- include spec files here... -->
     <script type="text/javascript" src="spec/salon-service-spec.js"></script>

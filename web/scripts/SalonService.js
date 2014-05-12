@@ -8,7 +8,16 @@ app.factory('SalonService', ['$http', function ($http) {
 
             var params = $.param({latlng: geolocation, radius: radius});
             return $http.get('/api/salons/?' + params).then(function(response) {
-                return response.data;
+                var salons = response.data;
+
+                _.each(salons, function(salon) {
+                    salon.location = {
+                        latitude: salon.geometry.location.lat,
+                        longitude: salon.geometry.location.lng
+                    }
+                });
+
+                return salons;
             });
         }
     };

@@ -7,28 +7,25 @@ app.controller('map', ['$scope', 'SalonService', function ($scope, SalonService)
             latitude: -22.9112728,
             longitude: -43.4484478
         },
+        user_marker: {
+            latitude: -22.9112728,
+            longitude: -43.4484478
+        },
         zoom: 8
     };
 
     navigator.geolocation.getCurrentPosition(function (location) {
         $scope.map = {
-            center: {
-                latitude: location.coords.latitude,
-                longitude: location.coords.longitude
-            },
-            zoom: 17
+            center: location.coords,
+            user_marker: location.coords,
+            zoom: 17,
+            options: {
+                draggable: true
+            }
         };
 
         SalonService.getSalonsByLocation(location.coords.latitude + ',' + location.coords.longitude)
             .then(function (salons) {
-
-                _.each(salons, function(salon) {
-                    salon.location = {
-                        latitude: salon.geometry.location.lat,
-                        longitude: salon.geometry.location.lng
-                    }
-                });
-
                 if (salons.length > 0) {
                     $scope.salons = salons;
                 } else {
