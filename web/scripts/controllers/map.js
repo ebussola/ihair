@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('map', ['$scope', 'SalonService', function ($scope, SalonService) {
+app.controller('map', ['$scope', 'SalonService', 'Geolocation', function ($scope, SalonService, Geolocation) {
     $scope.salons = [];
     $scope.map = {
         center: {
@@ -14,17 +14,21 @@ app.controller('map', ['$scope', 'SalonService', function ($scope, SalonService)
         zoom: 8
     };
 
-    navigator.geolocation.getCurrentPosition(function (location) {
+    Geolocation.getCurrentPosition().then(function(position) {
         $scope.map = {
-            center: location.coords,
-            user_marker: location.coords,
+            center: position.coords,
+            user_marker: position.coords,
             zoom: 17,
             options: {
                 draggable: true
             }
         };
+    });
 
-        SalonService.getSalonsByLocation(location.coords.latitude + ',' + location.coords.longitude)
+    Geolocation.watchPosition().then(null, null, function (position) {
+        $scope.map.user_marker = position.coords;
+
+        SalonService.getSalonsByLocation(position.coords.latitude + ',' + position.coords.longitude)
             .then(function (salons) {
                 if (salons.length > 0) {
                     $scope.salons = salons;

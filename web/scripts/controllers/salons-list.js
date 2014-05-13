@@ -1,9 +1,9 @@
 'use strict';
 
-app.controller('salons-list', ['$scope', 'SalonService', function ($scope, SalonService) {
+app.controller('salons-list', ['$scope', 'SalonService', 'Geolocation', function ($scope, SalonService, Geolocation) {
 
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (location) {
+        Geolocation.watchPosition().then(null, null, function (location) {
             SalonService.getSalonsByLocation(location.coords.latitude+','+location.coords.longitude)
                 .then(function (salons) {
 
