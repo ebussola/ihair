@@ -14,12 +14,13 @@ $app->get(
     '/',
     function () use ($app) {
         $latlng = $app->request->get('latlng');
+        $radius = $app->request->get('radius');
 
         /** @var SalonSearch $salon_search */
         $salon_search = $app->container->salon_search;
         $geolocation = explode(',', $latlng);
 
-        $result_data = $salon_search->getSalonsByLocation($geolocation);
+        $result_data = $salon_search->getSalonsByLocation($geolocation, $radius);
 
         $app->response->setBody(json_encode($result_data));
     }

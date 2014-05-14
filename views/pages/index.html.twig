@@ -37,7 +37,6 @@
             </div>
             <!-- /.navbar-collapse -->
 
-            {{ component.modal_ok("no_results", "Não encontramos resultados =(", "Não foi possível encontrar um salão próximo a você =(") }}
         </div>
         <!-- /.container-fluid -->
     </nav>
@@ -45,7 +44,7 @@
 
     <div class="container" ng-controller="map">
 
-        <div class="google-map" center="map.center" zoom="map.zoom" options="map.options">
+        <div class="google-map" center="map.center" zoom="map.zoom" draggable="true" events="map.events" control="map.control">
             <markers models="salons" coords="'location'"></markers>
             <marker coords="map.user_marker" icon="'/images/map-marker-user-location.png'"></marker>
         </div>

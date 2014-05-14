@@ -1,40 +1,35 @@
 'use strict';
 
-app.controller('map', ['$scope', 'SalonService', 'Geolocation', function ($scope, SalonService, Geolocation) {
+app.controller('map', ['$scope', 'SalonService', 'Geolocation', 'Map', function ($scope, SalonService, Geolocation, Map) {
     $scope.salons = [];
-    $scope.map = {
-        center: {
-            latitude: -22.9112728,
-            longitude: -43.4484478
-        },
-        user_marker: {
-            latitude: -22.9112728,
-            longitude: -43.4484478
-        },
-        zoom: 8
-    };
+    $scope.map = Map;
 
-    Geolocation.getCurrentPosition().then(function(position) {
-        $scope.map = {
-            center: position.coords,
-            user_marker: position.coords,
-            zoom: 17,
-            options: {
-                draggable: true
-            }
-        };
+    Map.onDragEnd().then(null, null, function(control) {
+        var gMap = control.getGMap();
+        SalonService.getSalonsByLocation(gMap.getCenter().lat() + ',' + gMap.getCenter().lng())
+            .then(function (salons) {
+                $scope.salons = [];
+                if (salons.length > 0) {
+                    $scope.salons = salons;
+                }
+            });
+    });
+
+    Geolocation.getCurrentPosition().then(function (position) {
+        $scope.map.center = position.coords;
+        $scope.map.user_marker = position.coords;
+        $scope.map.zoom = 17;
+
+        SalonService.getSalonsByLocation(position.coords.latitude + ',' + position.coords.longitude)
+            .then(function (salons) {
+                $scope.salons = [];
+                if (salons.length > 0) {
+                    $scope.salons = salons;
+                }
+            });
     });
 
     Geolocation.watchPosition().then(null, null, function (position) {
         $scope.map.user_marker = position.coords;
-
-        SalonService.getSalonsByLocation(position.coords.latitude + ',' + position.coords.longitude)
-            .then(function (salons) {
-                if (salons.length > 0) {
-                    $scope.salons = salons;
-                } else {
-                    $('#no_results').modal('show');
-                }
-            });
     });
 }]);
