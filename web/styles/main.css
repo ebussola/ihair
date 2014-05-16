@@ -1,3 +1,46 @@
-.angular-google-map-container {
-    height: 500px;
+html, body, .container-fluid, .angular-google-map-container, .angular-google-map, .google-map {
+    height: 100%;
+}
+
+.no-margin {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.navbar-ihair {
+    background-color: #ff4545;
+    border-radius: 0 !important;
+}
+.navbar-nav > li > a {
+    color: #fff;
+}
+.nav > li.dropdown > a:hover, .nav > li.dropdown > a:focus {
+    background-color: #ff7474;
+}
+.navbar-toggle {
+    float: none !important;
+}
+.navbar-toggle .icon-bar {
+    background-color: #000;
+}
+
+.navbar-brand {
+    padding-top: 3px !important;
+}
+
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        float: none !important;
+        position: absolute;
+        left: 42%;
+        padding-top: 3px !important;
+    }
+
+    .dropdown-menu > li > a {
+        color: #fff !important;
+    }
+    .dropdown-menu > li > a:hover {
+        background-color: #ff7474 !important;
+    }
 }

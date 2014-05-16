@@ -9,7 +9,7 @@
 
     {{ component.modal_ok("turn_geolocation_on", "Permissão para acessar sua localização", "Para uma melhor navegação, aceite compartilhar sua localização conosco.") }}
 
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-ihair no-margin" role="navigation">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -20,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">iHair</a>
+                <a class="navbar-brand" href="#"><img src="/images/ihair-logo-45x45.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,9 +42,9 @@
     </nav>
 
 
-    <div class="container" ng-controller="map">
+    <div class="container-fluid no-margin" ng-controller="map">
 
-        <div class="google-map" center="map.center" zoom="map.zoom" draggable="true" events="map.events" control="map.control">
+        <div class="google-map" center="map.center" zoom="map.zoom" draggable="true" events="map.events" control="map.control" options="map.options">
             <markers models="salons" coords="'location'"></markers>
             <marker coords="map.user_marker" icon="'/images/map-marker-user-location.png'"></marker>
         </div>

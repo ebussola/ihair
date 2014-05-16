@@ -18,6 +18,9 @@ app.factory('Map', ['$q', function ($q) {
                 on_drag_end_deferred.notify(this.control);
             }
         },
+        options: {
+            disableDefaultUI: true
+        },
         control: {},
 
         onDragEnd: function() {
