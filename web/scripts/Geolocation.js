@@ -9,7 +9,7 @@ app.factory('Geolocation', ['$q', function ($q) {
     }, function (error) {
         deferred.reject(error);
 
-    }, { enableHighAccuracy: true, maximumAge: 10000, timeout: 30000 });
+    }, { enableHighAccuracy: false, maximumAge: 10000, timeout: 30000 });
 
     return {
         getCurrentPosition: function () {
