@@ -2,6 +2,11 @@
 
 app.controller('salons-list', ['$scope', 'SalonService', 'Geolocation', 'Map', function ($scope, SalonService, Geolocation, Map) {
 
+    $scope.list_salon_click = function(salon) {
+        $('#salon_details').modal('show');
+        $scope.salon_detail = salon;
+    };
+
     Map.onDragEnd().then(null, null, function(control) {
         var gMap = control.getGMap();
         SalonService.getSalonsByLocation(gMap.getCenter().lat() + ',' + gMap.getCenter().lng())

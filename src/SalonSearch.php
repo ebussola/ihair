@@ -43,6 +43,10 @@ class SalonSearch
             $result_data = array_merge($result_data, $result['results']);
         }
 
+        foreach ($result_data as &$salon) {
+            $salon['rating'] = 3.4;
+        }
+
         return $result_data;
     }
 

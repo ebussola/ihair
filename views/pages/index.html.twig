@@ -24,28 +24,30 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="salons-list">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lista <b class="caret"></b></a>
-                        <ul class="dropdown-menu" ng-controller="salons-list">
+                        <ul class="dropdown-menu">
                             <li class="text-center" ng-hide="salons.length"><img src="/images/ajax-loader.gif"></li>
-                            <li ng-repeat="salon in salons"><a href="#">{{ ng.curly("salon.name") }}</a></li>
+                            <li ng-repeat="salon in salons"><a href="#" ng-click="list_salon_click(salon)">{{ ng.curly("salon.name") }}</a></li>
                         </ul>
                     </li>
                 </ul>
+                {{ component.modal_salon_details("salon_details", "{{ salon_detail.name }}", "salon_detail.rating", "{{ salon_detail.vicinity }}") }}
             </div>
+
             <!-- /.navbar-collapse -->
 
         </div>
         <!-- /.container-fluid -->
     </nav>
 
-
     <div class="container-fluid no-margin" ng-controller="map">
         <div class="google-map" center="map.center" zoom="map.zoom" draggable="true" events="map.events" control="map.control" options="map.options">
             <marker ng-repeat="salon in salons" coords="salon.location" >
                 <window>
+                    <rating ng-model="salon.rating" max="5"></rating>
                     <h4>{{ ng.curly("salon.name") }}</h4>
                     <p>{{ ng.curly("salon.vicinity") }}</p>
                 </window>

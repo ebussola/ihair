@@ -1,4 +1,4 @@
 'use strict';
 console.log('Welcome to iHair!');
 
-var app = angular.module('ihair', ['google-maps']);
+var app = angular.module('ihair', ['google-maps', 'ui.bootstrap']);
