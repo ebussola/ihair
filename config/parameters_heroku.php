@@ -9,5 +9,13 @@
 return [
     'env' => 'production',
 
-    'google-api-key' => 'AIzaSyChIrsWcfL-KMliD3wKqpf_m902rs2iJYc'
+    'google-api-key' => 'AIzaSyChIrsWcfL-KMliD3wKqpf_m902rs2iJYc',
+
+    'db' => [
+        'driver' => 'pdo_mysql',
+        'user' => '',
+        'password' => '',
+        'dbname' => '',
+        'host' => ''
+    ]
 ];

@@ -1,5 +1,7 @@
 <?php
 
+use joshtronic\GooglePlaces;
+
 /**
  * Created by PhpStorm.
  * User: Leonardo Shinagawa

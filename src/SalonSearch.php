@@ -9,15 +9,17 @@
 namespace ebussola\ihair;
 
 
+use joshtronic\GooglePlaces;
+
 class SalonSearch
 {
 
     /**
-     * @var \GooglePlaces
+     * @var GooglePlaces
      */
     protected $google_places;
 
-    public function __construct(\GooglePlaces $google_places)
+    public function __construct(GooglePlaces $google_places)
     {
         $google_places->types = ['beauty_salon', 'hair_care'];
         $this->google_places = $google_places;
