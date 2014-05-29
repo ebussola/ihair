@@ -14,11 +14,11 @@ $app = new \Slim\Slim([
     'templates.path' => __DIR__ . '/views/'
 ]);
 
-$env = '';
-if (getenv('env') && getenv('env') == 'heroku') {
-    $env = '_heroku';
+$env = 'development';
+if (getenv('ENV')) {
+    $env = getenv('ENV');
 }
-$app->container->config = include __DIR__ . '/config/parameters'.$env.'.php';
+$app->container->config = include __DIR__ . '/config/parameters_'.$env.'.php';
 $app->config('debug', $app->container->config['env'] == 'development');
 
 require __DIR__ . '/config/container.php';
