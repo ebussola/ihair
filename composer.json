@@ -17,6 +17,8 @@
         "slim/slim": "~2.4",
         "slim/views": "~0.1",
         "twig/twig": "~1.15",
+        "flynsarmy/slim-monolog": "~1.0",
+        "rollbar/rollbar": "~0.8",
 
         "joshtronic/php-googleplaces": "dev-master",
         "jackalope/jackalope-doctrine-dbal": "~1.1"

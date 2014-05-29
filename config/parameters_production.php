@@ -17,5 +17,11 @@ return [
         'password' => getenv('DB_PASSWORD'),
         'dbname' => getenv('DB_DBNAME'),
         'host' => getenv('DB_HOST')
-    ]
+    ],
+
+    'logger' => array(
+        'handlers' => array(
+            new \Monolog\Handler\NullHandler()
+        )
+    )
 ];
