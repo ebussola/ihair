@@ -8,14 +8,16 @@
 
 use ebussola\ihair\SalonSearch;
 
-Rollbar::init(array('access_token' => '1514c0d892d8421eb70d4878ab53a467'));
+if (getenv('ROLLBAR_ACCESS_TOKEN')) {
+    Rollbar::init(array('access_token' => getenv('ROLLBAR_ACCESS_TOKEN')));
+}
 
 $app->container->singleton(
     'google_places',
     function () use ($app) {
         $config = $app->container->config;
 
-        $google_places = new \joshtronic\GooglePlaces($config['google-api-key']);
+        $google_places = new \joshtroni\GooglePlaces($config['google-api-key']);
 
         return $google_places;
     }
