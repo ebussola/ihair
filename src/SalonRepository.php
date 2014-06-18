@@ -41,11 +41,11 @@ class SalonRepository
     public function saveSalon(Salon $salon)
     {
         $salon_root_node = $this->session->getNode('/salon');
-        if ($salon->id == null) {
-            $salon->id = uniqid(time());
-            $salon_node = $salon_root_node->addNode($salon->id);
-        } else {
+
+        if ($salon_root_node->hasNode($salon->id)) {
             $salon_node = $salon_root_node->getNode($salon->id);
+        } else {
+            $salon_node = $salon_root_node->addNode($salon->id);
         }
 
         $salon_node->setProperty('name', $salon->name);

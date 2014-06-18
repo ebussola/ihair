@@ -1,6 +1,10 @@
 <?php
 
-$config = include __DIR__ . '/config/parameters.php';
+$env = 'development';
+if (getenv('ENV')) {
+    $env = getenv('ENV');
+}
+$config = include __DIR__ . '/config/parameters_' . $env . '.php';
 
 /* bootstrapping the repository implementation */
 

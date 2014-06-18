@@ -12,6 +12,7 @@ if (getenv('ROLLBAR_ACCESS_TOKEN')) {
     Rollbar::init(array('access_token' => getenv('ROLLBAR_ACCESS_TOKEN')));
 }
 
+// GOOGLE PLACES
 $app->container->singleton(
     'google_places',
     function () use ($app) {
@@ -23,11 +24,20 @@ $app->container->singleton(
     }
 );
 
+// SALON SEARCH
 $app->container->singleton(
     'salon_search',
     function () use ($app) {
         $salon_search = new SalonSearch($app->container->google_places);
 
         return $salon_search;
+    }
+);
+
+// SALON REPOSITORY
+$app->container->singleton(
+    'salon_repository',
+    function () use ($app) {
+        return \ebussola\ihair\SalonFactory::getRepository($app->config['db']);
     }
 );

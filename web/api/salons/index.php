@@ -18,11 +18,19 @@ $app->get(
 
         /** @var SalonSearch $salon_search */
         $salon_search = $app->container->salon_search;
+        /** @var \ebussola\ihair\SalonRepository $salon_repository */
+        $salon_repository = $app->salon_repository;
         $geolocation = explode(',', $latlng);
 
         $result_data = $salon_search->getSalonsByLocation($geolocation, $radius);
+        $salon_ids = [];
+        foreach ($result_data as $data) {
+            $salon_ids[] = $data['id'];
+        }
 
-        $app->response->setBody(json_encode($result_data));
+        $salons = $salon_repository->getSalons($salon_ids);
+
+        $app->response->setBody(json_encode($salons));
     }
 );
 

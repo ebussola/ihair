@@ -8,11 +8,7 @@
 
 namespace ebussola\ihair\salon;
 
-
-use ebussola\common\superpower\EasyArrayable;
-
 class Salon implements \ebussola\ihair\Salon {
-    use EasyArrayable;
 
     public $id;
     public $name;

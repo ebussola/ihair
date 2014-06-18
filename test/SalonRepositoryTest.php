@@ -33,6 +33,7 @@ class SalonRepositoryTest extends PHPUnit_Framework_TestCase
     public function testSaveSalon()
     {
         $salon = new \ebussola\ihair\salon\Salon();
+        $salon->id = uniqid(time());
         $salon->name = 'Rose Coiffeur';
         $salon->rating = 5;
 
