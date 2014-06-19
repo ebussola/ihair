@@ -55,6 +55,8 @@ class SalonsController
             $salon->id = $data['id'];
             $salon->name = $data['name'];
             $salon->rating = 0;
+            $salon->vicinity = $data['vicinity'];
+            $salon->location = new Location($data['geometry']['location']['lat'], $data['geometry']['location']['lng']);
             $this->salon_repository->saveSalon($salon);
 
             $salons[] = $salon;

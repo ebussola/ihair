@@ -10,13 +10,6 @@ app.factory('SalonService', ['$http', function ($http) {
             return $http.get('/api/salons/?' + params).then(function(response) {
                 var salons = response.data;
 
-                _.each(salons, function(salon) {
-                    salon.location = {
-                        latitude: salon.geometry.location.lat,
-                        longitude: salon.geometry.location.lng
-                    }
-                });
-
                 return salons;
             });
         }

@@ -8,10 +8,13 @@
 
 namespace ebussola\ihair\salon;
 
+
 class Salon implements \ebussola\ihair\Salon {
 
     public $id;
     public $name;
     public $rating;
+    public $vicinity;
+    public $location;
 
 }

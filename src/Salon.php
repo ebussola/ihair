@@ -15,6 +15,8 @@ namespace ebussola\ihair;
  * @property string $id
  * @property string $name
  * @property int $rating
+ * @property string $vicinity
+ * @property Location $location
  */
 interface Salon {
 

@@ -50,6 +50,8 @@ class SalonRepository
 
         $salon_node->setProperty('name', $salon->name);
         $salon_node->setProperty('rating', $salon->rating);
+        $salon_node->setProperty('vicinity', $salon->vicinity);
+        $salon_node->setProperty('location', serialize($salon->location));
 
         $this->session->save();
     }
@@ -79,7 +81,7 @@ class SalonRepository
         $nodes = $this->session->getNodes($paths);
         $salons = [];
         foreach ($nodes as $node) {
-            $nodes[] = $this->makeSalon($node);
+            $salons[] = $this->makeSalon($node);
         }
 
         return $salons;
@@ -95,6 +97,8 @@ class SalonRepository
         $salon->id = $node->getName();
         $salon->name = $node->getPropertyValue('name');
         $salon->rating = $node->getPropertyValue('rating');
+        $salon->vicinity = $node->getPropertyValue('vicinity');
+        $salon->location = unserialize($node->getPropertyValue('location'));
 
         return $salon;
     }

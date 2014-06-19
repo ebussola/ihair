@@ -36,6 +36,8 @@ class SalonRepositoryTest extends PHPUnit_Framework_TestCase
         $salon->id = uniqid(time());
         $salon->name = 'Rose Coiffeur';
         $salon->rating = 5;
+        $salon->vinicity = 'Rua do Catete';
+        $salon->location = new \ebussola\ihair\Location(21, 22);
 
         $this->salon_repository->saveSalon($salon);
         $this->assertNotNull($salon->id);
@@ -44,6 +46,9 @@ class SalonRepositoryTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf('\ebussola\ihair\Salon', $same_salon);
         $this->assertSame($same_salon->id, $salon->id);
         $this->assertSame($same_salon->name, $salon->name);
+        $this->assertSame($same_salon->rating, $salon->rating);
+        $this->assertSame($same_salon->vicinity, $salon->vicinity);
+        $this->assertInstanceOf('\ebussola\ihair\Location', $same_salon->location);
     }
 
 }
