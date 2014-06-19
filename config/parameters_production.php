@@ -21,7 +21,7 @@ return [
 
     'logger' => array(
         'handlers' => array(
-            new \Monolog\Handler\NullHandler()
+            new \Monolog\Handler\RollbarHandler(new RollbarNotifier(['access_token' => getenv('ROLLBAR_ACCESS_TOKEN')]))
         )
     )
 ];

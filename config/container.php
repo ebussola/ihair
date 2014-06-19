@@ -41,3 +41,11 @@ $app->container->singleton(
         return \ebussola\ihair\SalonFactory::getRepository($app->config['db']);
     }
 );
+
+// SALONS CONTROLLER
+$app->container->singleton(
+    'salons_controller',
+    function () use ($app) {
+        return new \ebussola\ihair\SalonsController($app->salon_search, $app->salon_repository);
+    }
+);

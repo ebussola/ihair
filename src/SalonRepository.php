@@ -54,6 +54,10 @@ class SalonRepository
         $this->session->save();
     }
 
+    /**
+     * @param string $salon_id
+     * @return Salon
+     */
     public function getSalon($salon_id)
     {
         $node = $this->session->getNode('/salon/' . $salon_id);
@@ -61,6 +65,10 @@ class SalonRepository
         return $this->makeSalon($node);
     }
 
+    /**
+     * @param string[] $salon_ids
+     * @return Salon[]
+     */
     public function getSalons(array $salon_ids)
     {
         $paths = [];
