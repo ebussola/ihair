@@ -28,12 +28,29 @@ class SalonsController
         $this->salon_repository = $salon_repository;
     }
 
-    public function get($latlng, $radius)
+    public function get($latlng, $radius, $client_id)
     {
         $geolocation = explode(',', $latlng);
+        $result = null;
+        $next_page = null;
+        do {
+            if (isset($result['next_page_token'])) {
+                $next_page = $result['next_page_token'];
+            }
+            $result = $this->salon_search->getSalonsByLocation($geolocation, $radius, $next_page);
+            $salons = $this->saveNewSalonsAndPrepare($result['results']);
+            $this->sendToClient($client_id, $salons);
 
-        $result_data = $this->salon_search->getSalonsByLocation($geolocation, $radius);
+        } while (isset($result['next_page_token']));
 
+        return true;
+    }
+
+    /**
+     * @param $result_data
+     */
+    protected function saveNewSalonsAndPrepare($result_data)
+    {
         $salon_ids = [];
         foreach ($result_data as $data) {
             $salon_ids[] = $data['id'];
@@ -63,6 +80,12 @@ class SalonsController
         }
 
         return $salons;
+    }
+
+    private function sendToClient($client_id, $salons)
+    {
+        $pusher = new \Pusher('95a73fe212094600645d', 'af98af7594206a5af0c0', '83592', true);
+        $pusher->trigger('salons', (string)$client_id, json_encode($salons));
     }
 
 } 

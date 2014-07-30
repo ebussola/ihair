@@ -31,21 +31,16 @@ class SalonSearch
      *
      * @return array
      */
-    public function getSalonsByLocation($geolocation, $radius = 100)
+    public function getSalonsByLocation($geolocation, $radius = 100, $next_page = null)
     {
         $this->google_places->location = $geolocation;
         $this->google_places->radius = $radius;
+        if ($next_page != null) {
+            $this->google_places->pagetoken = $next_page;
+        }
         $result = $this->google_places->nearbySearch();
 
-        $result_data = $result['results'];
-
-        while (isset($result['next_page_token'])) {
-            $this->google_places->pagetoken = $result['next_page_token'];
-            $result = $this->google_places->nearbySearch();
-            $result_data = array_merge($result_data, $result['results']);
-        }
-
-        return $result_data;
+        return $result;
     }
 
 } 

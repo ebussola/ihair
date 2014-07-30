@@ -13,10 +13,9 @@ $app->get(
     function () use ($app) {
         $latlng = $app->request->get('latlng');
         $radius = $app->request->get('radius');
+        $client_id = $app->request->get('client_id');
 
-        $salons = $app->salons_controller->get($latlng, $radius);
-
-        $app->response->setBody(json_encode($salons));
+        $app->salons_controller->get($latlng, $radius, $client_id);
     }
 );
 

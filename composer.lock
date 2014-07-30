@@ -1,22 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "da5b40824be029121369f422e6d2579e",
+    "hash": "a5137a81bf889ae273b70bed667affa5",
     "packages": [
         {
             "name": "doctrine/annotations",
-            "version": "v1.1.2",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "40db0c96985aab2822edbc4848b3bd2429e02670"
+                "reference": "d9b1a37e9351ddde1f19f09a02e3d6ee92e82efd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/40db0c96985aab2822edbc4848b3bd2429e02670",
-                "reference": "40db0c96985aab2822edbc4848b3bd2429e02670",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/d9b1a37e9351ddde1f19f09a02e3d6ee92e82efd",
+                "reference": "d9b1a37e9351ddde1f19f09a02e3d6ee92e82efd",
                 "shasum": ""
             },
             "require": {
@@ -24,12 +25,13 @@
                 "php": ">=5.3.2"
             },
             "require-dev": {
-                "doctrine/cache": "1.*"
+                "doctrine/cache": "1.*",
+                "phpunit/phpunit": "4.*"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "autoload": {
@@ -64,7 +66,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -75,7 +77,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2013-06-16 21:33:03"
+            "time": "2014-07-06 15:52:21"
         },
         {
             "name": "doctrine/cache",
@@ -527,16 +529,16 @@
         },
         {
             "name": "jackalope/jackalope",
-            "version": "1.1.2",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jackalope/jackalope.git",
-                "reference": "b013652c80851e6743c1890455d3506130808f3b"
+                "reference": "96fb324089c7c7e4f8cb7cc4945dd48c820994e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jackalope/jackalope/zipball/b013652c80851e6743c1890455d3506130808f3b",
-                "reference": "b013652c80851e6743c1890455d3506130808f3b",
+                "url": "https://api.github.com/repos/jackalope/jackalope/zipball/96fb324089c7c7e4f8cb7cc4945dd48c820994e4",
+                "reference": "96fb324089c7c7e4f8cb7cc4945dd48c820994e4",
                 "shasum": ""
             },
             "require": {
@@ -576,7 +578,7 @@
             "keywords": [
                 "phpcr"
             ],
-            "time": "2014-05-25 09:34:01"
+            "time": "2014-07-03 12:51:27"
         },
         {
             "name": "jackalope/jackalope-doctrine-dbal",
@@ -646,12 +648,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/joshtronic/php-googleplaces.git",
-                "reference": "c3fe6e8e5934f3274e331f8751da92cea15fd57a"
+                "reference": "e34e40b43ed69bf10e033ec80bccf4a6e81f6648"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joshtronic/php-googleplaces/zipball/c3fe6e8e5934f3274e331f8751da92cea15fd57a",
-                "reference": "c3fe6e8e5934f3274e331f8751da92cea15fd57a",
+                "url": "https://api.github.com/repos/joshtronic/php-googleplaces/zipball/e34e40b43ed69bf10e033ec80bccf4a6e81f6648",
+                "reference": "e34e40b43ed69bf10e033ec80bccf4a6e81f6648",
                 "shasum": ""
             },
             "require-dev": {
@@ -675,20 +677,20 @@
                 }
             ],
             "description": "PHP Wrapper for the Google Places API",
-            "time": "2014-05-14 21:35:25"
+            "time": "2014-07-24 02:56:21"
         },
         {
             "name": "monolog/monolog",
-            "version": "1.9.1",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "65026b610f8c19e61d7242f600530677b0466aac"
+                "reference": "25b16e801979098cb2f120e697bfce454b18bf23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/65026b610f8c19e61d7242f600530677b0466aac",
-                "reference": "65026b610f8c19e61d7242f600530677b0466aac",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/25b16e801979098cb2f120e697bfce454b18bf23",
+                "reference": "25b16e801979098cb2f120e697bfce454b18bf23",
                 "shasum": ""
             },
             "require": {
@@ -716,7 +718,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.9.x-dev"
+                    "dev-master": "1.10.x-dev"
                 }
             },
             "autoload": {
@@ -743,7 +745,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-04-24 13:29:03"
+            "time": "2014-06-04 16:30:04"
         },
         {
             "name": "phpcr/phpcr",
@@ -802,16 +804,16 @@
         },
         {
             "name": "phpcr/phpcr-utils",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpcr/phpcr-utils.git",
-                "reference": "e50943432f8e26f9fc05af7994f8747ead3270fa"
+                "reference": "25e62cda03a43ded9f95830021aa1ff8e077997b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpcr/phpcr-utils/zipball/e50943432f8e26f9fc05af7994f8747ead3270fa",
-                "reference": "e50943432f8e26f9fc05af7994f8747ead3270fa",
+                "url": "https://api.github.com/repos/phpcr/phpcr-utils/zipball/25e62cda03a43ded9f95830021aa1ff8e077997b",
+                "reference": "25e62cda03a43ded9f95830021aa1ff8e077997b",
                 "shasum": ""
             },
             "require": {
@@ -861,7 +863,7 @@
                 "contentrepository",
                 "phpcr"
             ],
-            "time": "2014-02-02 18:30:21"
+            "time": "2014-06-17 13:04:25"
         },
         {
             "name": "psr/log",
@@ -902,17 +904,58 @@
             "time": "2012-12-21 11:40:51"
         },
         {
-            "name": "rollbar/rollbar",
-            "version": "v0.9.0",
+            "name": "pusher/pusher-php-server",
+            "version": "v2.1.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/rollbar/rollbar-php.git",
-                "reference": "e809bb312b471eb2ff0b072e044b00f752b4dc90"
+                "url": "https://github.com/pusher/pusher-php-server.git",
+                "reference": "4bb96195dd9109c1197aedc7d1d1de09cac02279"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rollbar/rollbar-php/zipball/e809bb312b471eb2ff0b072e044b00f752b4dc90",
-                "reference": "e809bb312b471eb2ff0b072e044b00f752b4dc90",
+                "url": "https://api.github.com/repos/pusher/pusher-php-server/zipball/4bb96195dd9109c1197aedc7d1d1de09cac02279",
+                "reference": "4bb96195dd9109c1197aedc7d1d1de09cac02279",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Library for interacting with the Pusher REST API",
+            "homepage": "https://github.com/pusher/pusher-php-server",
+            "keywords": [
+                "events",
+                "php-pusher-server",
+                "publish",
+                "pusher",
+                "realtime",
+                "rest",
+                "trigger"
+            ],
+            "time": "2012-12-22 01:50:13"
+        },
+        {
+            "name": "rollbar/rollbar",
+            "version": "v0.9.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rollbar/rollbar-php.git",
+                "reference": "41981d6844b74f9726ee49af685bec445e660652"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rollbar/rollbar-php/zipball/41981d6844b74f9726ee49af685bec445e660652",
+                "reference": "41981d6844b74f9726ee49af685bec445e660652",
                 "shasum": ""
             },
             "type": "library",
@@ -941,7 +984,7 @@
                 "logging",
                 "monitoring"
             ],
-            "time": "2014-05-23 23:28:42"
+            "time": "2014-07-30 18:17:09"
         },
         {
             "name": "slim/slim",
@@ -1045,32 +1088,34 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.4.5",
+            "version": "v2.5.2",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "24f723436e62598c9dddee2a8573d6992504dc5d"
+                "reference": "386fa63407805959bd2c5fe540294721ad4224c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/24f723436e62598c9dddee2a8573d6992504dc5d",
-                "reference": "24f723436e62598c9dddee2a8573d6992504dc5d",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/386fa63407805959bd2c5fe540294721ad4224c8",
+                "reference": "386fa63407805959bd2c5fe540294721ad4224c8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
+                "psr/log": "~1.0",
                 "symfony/event-dispatcher": "~2.1"
             },
             "suggest": {
+                "psr/log": "For using the console logger",
                 "symfony/event-dispatcher": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -1096,20 +1141,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-05-14 21:48:29"
+            "time": "2014-07-15 14:15:12"
         },
         {
             "name": "twig/twig",
-            "version": "v1.15.1",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed"
+                "reference": "8ce37115802e257a984a82d38254884085060024"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/1fb5784662f438d7d96a541e305e28b812e2eeed",
-                "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/8ce37115802e257a984a82d38254884085060024",
+                "reference": "8ce37115802e257a984a82d38254884085060024",
                 "shasum": ""
             },
             "require": {
@@ -1118,7 +1163,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -1153,10 +1198,48 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2014-02-13 10:19:29"
+            "time": "2014-07-05 12:19:05"
         }
     ],
     "packages-dev": [
+        {
+            "name": "moriony/php-zmq-stubs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moriony/php-zmq-stubs.git",
+                "reference": "5a2e45b8a86ad71a5f67a0a37568926f4f9fce52"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moriony/php-zmq-stubs/zipball/5a2e45b8a86ad71a5f67a0a37568926f4f9fce52",
+                "reference": "5a2e45b8a86ad71a5f67a0a37568926f4f9fce52",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitaliy Chesnokov",
+                    "email": "demateus@gmail.com"
+                }
+            ],
+            "description": "ZeroMQ stubs for IDE.",
+            "homepage": "https://github.com/moriony/php-zmq-stubs",
+            "keywords": [
+                "stub",
+                "stubs",
+                "zeromq",
+                "zmq"
+            ],
+            "time": "2013-08-17 08:42:00"
+        },
         {
             "name": "phpunit/php-code-coverage",
             "version": "1.2.17",
@@ -1525,17 +1608,17 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.4.5",
+            "version": "v2.5.2",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "fd22bb88c3a6f73c898b39bec185a9e211b06265"
+                "reference": "f868ecdbcc0276b6158dfbf08b9e98ce07f014e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/fd22bb88c3a6f73c898b39bec185a9e211b06265",
-                "reference": "fd22bb88c3a6f73c898b39bec185a9e211b06265",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/f868ecdbcc0276b6158dfbf08b9e98ce07f014e1",
+                "reference": "f868ecdbcc0276b6158dfbf08b9e98ce07f014e1",
                 "shasum": ""
             },
             "require": {
@@ -1544,7 +1627,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -1570,7 +1653,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2014-05-12 09:27:48"
+            "time": "2014-07-09 09:05:48"
         }
     ],
     "aliases": [
@@ -1578,7 +1661,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "joshtronic/php-googleplaces": 20
+        "joshtronic/php-googleplaces": 20,
+        "moriony/php-zmq-stubs": 20
     },
     "platform": {
         "php": "~5.5"
