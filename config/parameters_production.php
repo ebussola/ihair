@@ -23,5 +23,11 @@ return [
         'handlers' => array(
             new \Monolog\Handler\RollbarHandler(new RollbarNotifier(['access_token' => getenv('ROLLBAR_ACCESS_TOKEN')]))
         )
+    ),
+
+    'pusher' => array(
+        'app_id' => getenv('PUSHER_APP_ID'),
+        'api_key' => getenv('PUSHER_KEY'),
+        'api_secret' => getenv('PUSHER_SECRET')
     )
 ];

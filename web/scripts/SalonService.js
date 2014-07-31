@@ -2,7 +2,7 @@
 
 app.factory('SalonService', ['$http', '$q', function ($http, $q) {
 
-    var pusher = new Pusher('95a73fe212094600645d');
+    var pusher = new Pusher('228055a139ffea91dbaa');
     var channel = pusher.subscribe('salons');
     var deferred = $q.defer();
     var client_id = Math.floor((Math.random() * 100000000)) * Math.floor((Math.random() * 100)) + new Date().getTime();

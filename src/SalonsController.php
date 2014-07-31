@@ -22,10 +22,16 @@ class SalonsController
      */
     protected $salon_repository;
 
-    public function __construct(SalonSearch $salon_search, SalonRepository $salon_repository)
+    /**
+     * @var \Pusher
+     */
+    protected $pusher;
+
+    public function __construct(SalonSearch $salon_search, SalonRepository $salon_repository, \Pusher $pusher)
     {
         $this->salon_search = $salon_search;
         $this->salon_repository = $salon_repository;
+        $this->pusher = $pusher;
     }
 
     public function get($latlng, $radius, $client_id)
@@ -84,8 +90,7 @@ class SalonsController
 
     private function sendToClient($client_id, $salons)
     {
-        $pusher = new \Pusher('95a73fe212094600645d', 'af98af7594206a5af0c0', '83592', true);
-        $pusher->trigger('salons', (string)$client_id, json_encode($salons));
+        $this->pusher->trigger('salons', (string)$client_id, json_encode($salons));
     }
 
 } 

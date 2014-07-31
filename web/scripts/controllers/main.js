@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('main', ['Geolocation', function (Geolocation) {
+app.controller('main', ['$rootScope', 'Geolocation', function ($rootScope, Geolocation) {
 
     turn_on_location_share_modal();
 
@@ -16,4 +16,9 @@ app.controller('main', ['Geolocation', function (Geolocation) {
             $turn_geolocation_on.data('geolocation-accepted', '1');
         });
     }
+
+    $rootScope.list_salon_click = function(salon) {
+        $('#salon_details').modal('show');
+        $rootScope.salon_detail = salon;
+    };
 }]);

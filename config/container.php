@@ -46,6 +46,14 @@ $app->container->singleton(
 $app->container->singleton(
     'salons_controller',
     function () use ($app) {
-        return new \ebussola\ihair\SalonsController($app->salon_search, $app->salon_repository);
+        return new \ebussola\ihair\SalonsController($app->salon_search, $app->salon_repository, $app->pusher);
+    }
+);
+
+// PUSHER API
+$app->container->singleton(
+    'pusher',
+    function () use ($app) {
+        return new \Pusher($app->config['pusher']['api_key'], $app->config['pusher']['api_secret'], $app->config['pusher']['app_id']);
     }
 );
